@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">One Ration Card</string>
+
+    <string name="title">One Ration Card</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="ADMOB_APP_ID">ca-app-pub-7920815986886474~2119672434</string>
+
+    <string name="ADMOB_BANNER">ca-app-pub-7920815986886474/8505722584</string>
+    <string name="ADMOB_FULL">ca-app-pub-7920815986886474/3772787579</string>
+    <string name="ADMOB_NATIVE">ca-app-pub-7920815986886474/4855224632</string>
+    <string name="ADMOB_OPEN">ca-app-pub-7920815986886474/6027076512</string>
+
+    <string name="applovin_sdk_key">eSi6LOvzSx3TMPNxhwykIxG2Cyf3w0OhNcqAiF9G2Mw0zaDJK6oCmuD4g1l6z_5yqnp1Vw2MLVW_xwM_umVnvV</string>
+</resources>

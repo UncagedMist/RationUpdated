@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="overlayBackgroundMenu">#7f004487</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="purple">#ba53de</color>
+    <color name="pink">#f469a9</color>
+    <color name="black">#000000</color>
+    <color name="blue">#88bef5</color>
+
+    <color name="red">#ff6767</color>
+    <color name="orange">#ffb067</color>
+    <color name="green">#67ffae</color>
+    <color name="setting">#9D4DA4</color>
+
+    <color name="color1">#EE4876</color>
+    <color name="color2">#B64FA0</color>
+    <color name="color3">#9253BC</color>
+    <color name="color4">#4C5CF0</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="greenDark">#348180</color>
+</resources>

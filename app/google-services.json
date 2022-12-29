@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "849927208590",
+    "firebase_url": "https://tourismguide-18eab.firebaseio.com",
+    "project_id": "tourismguide-18eab",
+    "storage_bucket": "tourismguide-18eab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849927208590:android:bbc4b4569bf2db82",
+        "android_client_info": {
+          "package_name": "tbc.techbytecare.kk.touristguideproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849927208590-74iijilb782aaur3vofgd6mqcdi2j6j8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tbc.techbytecare.kk.touristguideproject",
+            "certificate_hash": "e7e2c01698da53d740db3ec341794e9acf386ed1"
+          }
+        },
+        {
+          "client_id": "849927208590-htbbdgto7lf78iihsl1b8tl5pnsm45km.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtHy-Euf1yU4pRvE_M5YXvfarW2LwqkI"
+        },
+        {
+          "current_key": "AIzaSyBfrQ9Imub3-QeaXAF8hhywRak9B98jHhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849927208590-9pth2hitktdj1iid3eu1nl0qltlujifl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849927208590:android:049971c5a6a43855add3df",
+        "android_client_info": {
+          "package_name": "tbc.uncagedmist.rationcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849927208590-htbbdgto7lf78iihsl1b8tl5pnsm45km.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtHy-Euf1yU4pRvE_M5YXvfarW2LwqkI"
+        },
+        {
+          "current_key": "AIzaSyBfrQ9Imub3-QeaXAF8hhywRak9B98jHhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849927208590-9pth2hitktdj1iid3eu1nl0qltlujifl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

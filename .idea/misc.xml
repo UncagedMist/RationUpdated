@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/background_btn.xml" value="0.1814814814814815" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/bg.xml" value="0.2169230769230769" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/ic_baseline_private_connectivity_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/ic_baseline_settings_suggest_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/icon_backspace.xml" value="0.2169230769230769" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/light_purple_background.xml" value="0.18611111111111112" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/drawable/white_edittext.xml" value="0.18611111111111112" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/activity_details.xml" value="0.17777777777777778" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/activity_result.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/activity_splash.xml" value="0.1527777777777778" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/activity_state.xml" value="0.1" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/app_bar.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/app_bar_home.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/content_home.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_about.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_detail.xml" value="0.16666666666666666" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_home.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_privacy.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_result.xml" value="0.18" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/fragment_setting.xml" value="0.17314814814814813" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/layout_details.xml" value="0.1" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/layout_states.xml" value="0.14666666666666667" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/load_layout.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/nav_header_home.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/layout/progress_layout.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/menu/activity_main_drawer.xml" value="0.18703703703703703" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/menu/home_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/AppDev/RationCard/app/src/main/res/menu/menu_item.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

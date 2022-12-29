@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@color/greenDark">
+
+    <TextView
+        android:paddingEnd="64dp"
+        android:paddingStart="64dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_marginTop="64dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_name"
+        android:background="@drawable/green_back"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:background="@drawable/rectangle"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="34sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:text="Welcome to\n Ration Card \nHelpline."
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/btnContinue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/relative"
+        android:src="@drawable/circle_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
