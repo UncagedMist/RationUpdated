@@ -1,15 +1,26 @@
 package tbc.uncagedmist.rationcard.Common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.OnSuccessListener;
+import com.google.android.play.core.tasks.Task;
 
 import tbc.uncagedmist.rationcard.Model.Item;
 import tbc.uncagedmist.rationcard.Model.State;
 import tbc.uncagedmist.rationcard.R;
 import tbc.uncagedmist.rationcard.Remote.IMyAPI;
 import tbc.uncagedmist.rationcard.Remote.RetrofitClient;
+import tbc.uncagedmist.rationcard.SplashActivity;
 
 public class Common {
     public static final String WIN_URL = "https://894.win.qureka.com";
@@ -56,4 +67,32 @@ public class Common {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         context.startActivity(Intent.createChooser(intent, "Share "+context.getString(R.string.app_name)+" App Using"));
     }
+
+    public static void checkAppUpdate(Context context) {
+        final AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(context);
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo result) {
+
+                if (result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
+                        result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE))    {
+
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(
+                                result,
+                                AppUpdateType.IMMEDIATE,
+                                (Activity) context,
+                                512
+                        );
+                    }
+                    catch (IntentSender.SendIntentException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
 }

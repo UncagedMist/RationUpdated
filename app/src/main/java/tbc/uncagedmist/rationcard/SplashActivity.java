@@ -2,31 +2,37 @@ package tbc.uncagedmist.rationcard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.google.android.play.core.appupdate.AppUpdateInfo;
-import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.model.AppUpdateType;
-import com.google.android.play.core.install.model.UpdateAvailability;
-import com.google.android.play.core.tasks.OnSuccessListener;
-import com.google.android.play.core.tasks.Task;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import am.appwise.components.ni.NoInternetDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import tbc.uncagedmist.rationcard.Common.Common;
+import tbc.uncagedmist.rationcard.Remote.IMyAPI;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CODE = 5152;
 
     NoInternetDialog noInternetDialog;
+
+    IMyAPI myAPI;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +44,14 @@ public class SplashActivity extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
-        checkAppUpdate();
+        Common.checkAppUpdate(SplashActivity.this);
+        createNotificationChannel();
 
         setContentView(R.layout.activity_splash);
+
+        myAPI = Common.getAPI();
+
+        insertToken();
 
         noInternetDialog = new NoInternetDialog.Builder(this).build();
 
@@ -59,32 +70,47 @@ public class SplashActivity extends AppCompatActivity {
         });
     }
 
-    private void checkAppUpdate() {
-        final AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(SplashActivity.this);
-        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-
-        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
-            @Override
-            public void onSuccess(AppUpdateInfo result) {
-
-                if (result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
-                        result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE))    {
-
-                    try {
-                        appUpdateManager.startUpdateFlowForResult(
-                                result,
-                                AppUpdateType.IMMEDIATE,
-                                SplashActivity.this,
-                                REQUEST_CODE
-                        );
+    private void insertToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnSuccessListener(new OnSuccessListener<String>() {
+                    @Override
+                    public void onSuccess(String token) {
+                        Log.e("Token", token );
+                        registerToken(token);
                     }
-                    catch (IntentSender.SendIntentException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+                });
     }
+
+    @SuppressLint("HardwareIds")
+    private void registerToken(String token) {
+        String deviceId = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        myAPI.insertToken(deviceId,token)
+                .enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Toast.makeText(SplashActivity.this, "Checking App Update...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast.makeText(SplashActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel(getString(R.string.notification_channel_id), name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 
     @Override
     protected void onDestroy() {

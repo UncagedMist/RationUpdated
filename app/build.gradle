@@ -9,8 +9,8 @@ android {
         applicationId "tbc.uncagedmist.rationcard"
         minSdk 21
         targetSdk 33
-        versionCode 46
-        versionName "0.4.6"
+        versionCode 47
+        versionName "0.4.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +41,7 @@ dependencies {
     implementation 'com.github.mancj:MaterialSearchBar:+'
 
     implementation 'androidx.work:work-runtime:2.7.1'
-    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
 
     implementation 'com.applovin:applovin-sdk:+'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'

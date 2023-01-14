@@ -3,6 +3,7 @@ package tbc.uncagedmist.rationcard.Remote;
 import java.util.List;
 
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -26,5 +27,12 @@ public interface IMyAPI {
     @POST("getStateByName.php")
     Observable<List<State>> getStateByName(
             @Field("name") String name
+    );
+
+    @FormUrlEncoded
+    @POST("insertToken.php")
+    Call<String> insertToken(
+            @Field("deviceId")String deviceId,
+            @Field("token")String token
     );
 }
